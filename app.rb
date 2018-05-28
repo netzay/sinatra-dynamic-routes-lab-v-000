@@ -17,7 +17,21 @@ class App < Sinatra::Base
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-     @say = params[:word1]+params[:word2]+params[:word3]+params[:word4]+params[:word5]
-     "#{@say}."
-  end
+    words = []
+words[0] = params[:word1]
+words[1] = params[:word2]
+words[2] = params[:word3]
+words[3] = params[:word4]
+words[4] = params[:word5]
+phrase_string = ""
+counter = 0
+until counter == words.size
+phrase_string << "#{words[counter]} "
+counter += 1
+end
+phrase_string.chop! << "."
+"#{phrase_string.capitalize!}"
+end
+
+
 end
