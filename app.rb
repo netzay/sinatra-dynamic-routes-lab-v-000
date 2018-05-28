@@ -6,16 +6,16 @@ class App < Sinatra::Base
     @rev = params[:name].reverse
     "#{@rev}"
   end
-  
+
   get '/square/:number' do
     @square = params[:number].to_i ** 2
     "#{@square}"
   end
-  
+
   get '/say/:number/:phrase' do
     params[:phrase] * params[:number].to_i
   end
-  
+
   get '/say/:word1/:word2/:word3/:word4/:word5' do
     words = []
     words[0] = params[:word1]
@@ -30,7 +30,6 @@ class App < Sinatra::Base
       counter += 1
     end
     phrase_string.chop! << "."
-    "#{phrase_string.}"
+    "#{phrase_string}."
   end
-end
 end
