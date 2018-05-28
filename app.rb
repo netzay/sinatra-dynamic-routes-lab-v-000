@@ -12,7 +12,7 @@ class App < Sinatra::Base
     "#{@square}"
   end
 
-  get '/say/:number/:phrase' do 
+  get '/say/:number/:phrase' do
     phrase * number.to_i
   end
 end
